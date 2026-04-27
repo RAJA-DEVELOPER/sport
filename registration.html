@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration & Enrollment | Elite Sports Academy</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏆</text></svg>">
+    <meta name="description" content="Secure your spot at Elite Sports Academy. Fill out our simple registration form to schedule your initial skills assessment today.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Shared Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-trophy"></i> Elite<span>Sports</span>
+            </a>
+            <button class="mobile-toggle" id="mobile-toggle">
+                <span class="hamburger"></span>
+            </button>
+                        <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="registration.html">Registration</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header" style="padding-bottom: 5rem;">
+        <div class="container">
+            <h1>Secure Your Roster Spot</h1>
+            <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 2rem; font-size: 1.1rem;">Takes less than 2 minutes. Enter your athlete's details to schedule your inaugural skills assessment.</p>
+        </div>
+    </header>
+
+    <!-- Main Registration Section -->
+    <section class="section-padding bg-light" style="padding-top: 3rem;">
+        <div class="container">
+            <div class="reg-layout">
+                
+                <!-- Left: Multi-step Form -->
+                <div>
+                    <form id="multi-step-form" class="multi-step-form reveal" novalidate>
+                        
+                        <!-- Progress Indicator -->
+                        <div class="progress-bar-container">
+                            <div class="progress-line" id="progress-line"></div>
+                            <div class="step-dot active">1<span>Athlete</span></div>
+                            <div class="step-dot">2<span>Guardian</span></div>
+                            <div class="step-dot">3<span>Program</span></div>
+                        </div>
+
+                        <!-- Step 1: Athlete Info -->
+                        <div class="form-step active" id="step-1">
+                            <h3 class="form-subtitle">Athlete Details</h3>
+                            <p class="form-instruction">Who will be training at the academy?</p>
+                            
+                            <div class="form-group">
+                                <label for="reg-name">Athlete Full Name *</label>
+                                <input type="text" id="reg-name" required placeholder="E.g. Arjun Patel">
+                                <div class="error-msg" id="reg-name-error">Please enter the athlete's name.</div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="reg-dob">Date of Birth *</label>
+                                    <input type="date" id="reg-dob" required>
+                                    <div class="error-msg" id="reg-dob-error">Required for age-bracket allocation.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="reg-gender">Gender</label>
+                                    <select id="reg-gender" required>
+                                        <option value="">Select Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                    <div class="error-msg" id="reg-gender-error">Please select a gender.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="reg-med">Pre-existing Medical Conditions (Optional)</label>
+                                <input type="text" id="reg-med" placeholder="Allergies, asthma, past injuries...">
+                            </div>
+
+                            <div class="step-buttons" style="justify-content: flex-end;">
+                                <button type="button" class="btn btn-primary btn-next">Next Step <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Parent/Guardian Info -->
+                        <div class="form-step" id="step-2">
+                            <h3 class="form-subtitle">Guardian Details</h3>
+                            <p class="form-instruction">How can we contact you regarding schedules and updates?</p>
+
+                            <div class="form-group">
+                                <label for="reg-parent">Parent/Guardian Name *</label>
+                                <input type="text" id="reg-parent" required placeholder="E.g. Mr. Patel">
+                                <div class="error-msg" id="reg-parent-error">Please provide a guardian name.</div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="reg-phone">Contact Number *</label>
+                                    <input type="tel" id="reg-phone" required placeholder="10-digit mobile number">
+                                    <div class="error-msg" id="reg-phone-error">Please enter a valid 10-digit number.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="reg-email">Email Address *</label>
+                                    <input type="email" id="reg-email" required placeholder="For invoices & reports">
+                                    <div class="error-msg" id="reg-email-error">Please provide a valid email.</div>
+                                </div>
+                            </div>
+
+                            <div class="step-buttons">
+                                <button type="button" class="btn btn-outline btn-prev"><i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i> Back</button>
+                                <button type="button" class="btn btn-primary btn-next">Next Step <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Program Selection -->
+                        <div class="form-step" id="step-3">
+                            <h3 class="form-subtitle">Program Selection</h3>
+                            <p class="form-instruction">Which batch would you like to request an assessment for?</p>
+
+                            <div class="form-group">
+                                <label for="reg-program">Select Sport *</label>
+                                <select id="reg-program" required>
+                                    <option value="">-- Choose a Sport --</option>
+                                    <option value="cricket">Cricket Academy</option>
+                                    <option value="football">Football Academy</option>
+                                    <option value="tennis">Tennis Pro</option>
+                                    <option value="badminton">Badminton Elite</option>
+                                    <option value="basketball">Basketball League</option>
+                                    <option value="fitness">Pro Fitness & Conditioning</option>
+                                </select>
+                                <div class="error-msg" id="reg-program-error">Please select a program.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg-pref-time">Preferred Timing *</label>
+                                <select id="reg-pref-time" required>
+                                    <option value="">-- Choose Timing --</option>
+                                    <option value="morning">Morning (5 AM - 9 AM)</option>
+                                    <option value="evening">Evening (4 PM - 8 PM)</option>
+                                    <option value="weekend">Weekends Only</option>
+                                </select>
+                                <div class="error-msg" id="reg-pref-time-error">Please select your preferred timing.</div>
+                            </div>
+
+                            <div class="form-group" style="margin-top: 1.5rem; background: rgba(37,99,235,0.05); padding: 1rem; border-radius: 0.5rem; font-size: 0.9rem;">
+                                <strong>Note:</strong> Final batch allocation happens only after the primary physical assessment session.
+                            </div>
+
+                            <div class="step-buttons">
+                                <button type="button" class="btn btn-outline btn-prev"><i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i> Back</button>
+                                <button type="submit" class="btn btn-secondary"><i class="fa-solid fa-check"></i> Submit Registration</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- Right: Trust Signals & Sidebar -->
+                <div class="trust-sidebar reveal">
+                    <!-- Urgency -->
+                    <div class="urgency-box">
+                        <h4><i class="fa-solid fa-fire"></i> High Demand Notice</h4>
+                        <p style="font-size: 0.95rem; line-height: 1.5;">The U-14 Football and U-19 Cricket evening batches are <strong>90% full</strong>. Register today to avoid the waitlist.</p>
+                    </div>
+
+                    <!-- Trust Badge -->
+                    <div class="trust-badge-box">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h4>100% Secure Process</h4>
+                        <p>No upfront payment required today. You pay only after the free trial assessment.</p>
+                    </div>
+
+                    <div class="trust-badge-box" style="padding: 1.5rem;">
+                        <div style="font-size: 2rem; color: #FBBF24; margin-bottom: 0.5rem;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0;">Trusted by 5000+ Parents</h4>
+                    </div>
+
+                    <!-- Offers -->
+                    <div style="background: var(--primary); color: #fff; padding: 1.5rem; border-radius: 0.5rem; text-align: center;">
+                        <h4 style="color: var(--cta); margin-bottom: 0.5rem; font-family: var(--font-heading);">Special Offer</h4>
+                        <p style="font-size: 0.95rem; margin-bottom: 1rem;">Siblings get a flat 15% discount on the secondary admission.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Enrollment Roadmap -->
+    <section class="section-padding bg-light">
+        <div class="container reveal">
+            <div class="section-header">
+                <h2 class="section-title">Your Path to Excellence</h2>
+                <p class="section-subtitle">A transparent 4-step process to get you from registration to the field.</p>
+            </div>
+            <div class="roadmap-grid">
+                <div class="roadmap-item">
+                    <div class="roadmap-icon">1</div>
+                    <h4>Submit Details</h4>
+                    <p>Fill out the 2-minute online form with athlete and program preferences.</p>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-icon">2</div>
+                    <h4>Skills Assessment</h4>
+                    <p>Attend a free 60-minute physical and technical evaluation with our head coaches.</p>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-icon">3</div>
+                    <h4>Batch Assignment</h4>
+                    <p>Get placed in the perfect skill-level group (Beginner, Intermediate, or Pro).</p>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-icon">4</div>
+                    <h4>First Training</h4>
+                    <p>Receive your kit, ID card, and start your journey towards professional sports.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: What's in the Kit? -->
+    <section class="section-padding">
+        <div class="container reveal">
+            <div class="section-header">
+                <h2 class="section-title">Academy Starter Kit</h2>
+                <p class="section-subtitle">Included with your $50 onboarding fee. Look like a pro from day one.</p>
+            </div>
+            <div class="kit-grid">
+                <div class="kit-item">
+                    <i class="fa-solid fa-shirt"></i>
+                    <h4>Premium Jersey</h4>
+                    <p>Moisture-wicking official academy training shirt.</p>
+                </div>
+                <div class="kit-item">
+                    <i class="fa-solid fa-id-card"></i>
+                    <h4>Smart ID Card</h4>
+                    <p>Biometric entry and attendance tracking for safety.</p>
+                </div>
+                <div class="kit-item">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <h4>Sports Bag</h4>
+                    <p>Durable duffel bag with separate shoe compartment.</p>
+                </div>
+                <div class="kit-item">
+                    <i class="fa-solid fa-bottle-water"></i>
+                    <h4>Hydration Bottle</h4>
+                    <p>750ml BPA-free insulated sports bottle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Scholarship Section -->
+    <section class="section-padding bg-dark" style="background: var(--primary); color: #fff; margin: 2rem 0; border-radius: var(--radius-xl);">
+        <div class="container text-center reveal">
+            <h2 class="section-title" style="color: #fff;">Scholarship Opportunities</h2>
+            <p style="max-width: 700px; margin: 0 auto 2rem; color: rgba(255,255,255,0.8);">We believe talent should never be limited by finances. Elite Sports Academy offers up to 100% fee waivers for district and state-level players with exceptional track records.</p>
+            <a href="contact.html" class="btn btn-secondary">Apply for Talent Scout Assessment</a>
+        </div>
+    </section>
+
+    <!-- Fee Structure Section -->
+    <section class="section-padding">
+        <div class="container reveal">
+            <div class="section-header">
+                <h2 class="section-title">Transparent Fee Structure</h2>
+                <p class="section-subtitle">No hidden charges. No mandatory merchandise immediately. Choose a plan that fits your athletic goals.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Standard Pack -->
+                <div class="pricing-card">
+                    <h3 class="price-name">Development Pack</h3>
+                    <div class="price-tag"><span>$</span>90<span>/mo</span></div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Perfect for beginners and U-10 kids starting their journey.</p>
+                    
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> 3 Sessions per week</li>
+                        <li><i class="fa-solid fa-check"></i> Basic group coaching</li>
+                        <li><i class="fa-solid fa-check"></i> Standard ground access</li>
+                        <li style="opacity: 0.4;"><i class="fa-solid fa-times"></i> Detailed Video Analysis</li>
+                        <li style="opacity: 0.4;"><i class="fa-solid fa-times"></i> Nutritional Dietary Plan</li>
+                    </ul>
+                </div>
+
+                <!-- Pro Pack -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <h3 class="price-name">Pro Pack</h3>
+                    <div class="price-tag"><span>$</span>150<span>/mo</span></div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Designed for competitive intermediate and teenage athletes.</p>
+                    
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> 5 Sessions per week</li>
+                        <li><i class="fa-solid fa-check"></i> Special 1-on-1 focus drills</li>
+                        <li><i class="fa-solid fa-check"></i> 1x Monthly Video Analysis</li>
+                        <li><i class="fa-solid fa-check"></i> S&C Gym Access</li>
+                        <li style="opacity: 0.4;"><i class="fa-solid fa-times"></i> Tournament Sponsorship</li>
+                    </ul>
+                </div>
+
+                <!-- Elite Pack -->
+                <div class="pricing-card">
+                    <h3 class="price-name">Elite Academy</h3>
+                    <div class="price-tag"><span>$</span>250<span>/mo</span></div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Strictly for High-Performance state/district level players.</p>
+                    
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Unlimited Sessions & Court time</li>
+                        <li><i class="fa-solid fa-check"></i> Head Coach direct supervision</li>
+                        <li><i class="fa-solid fa-check"></i> Weekly Video Biometrics</li>
+                        <li><i class="fa-solid fa-check"></i> Dedicated Physiotherapist limit</li>
+                        <li><i class="fa-solid fa-check"></i> Sponsored Tournament entries</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration FAQs -->
+    <section class="section-padding bg-light">
+        <div class="container faq-container reveal">
+            <div class="section-header">
+                <h2 class="section-title">Registration FAQ</h2>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">What happens after I submit this form? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Our admissions office will call the guardian's number within 12 hours to schedule your free, no-obligation trial assessment at the academy.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Are there any hidden admission fees? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>There is a one-time onboarding fee of $50 when you convert from the free trial to a paid plan. This covers your official academy jersey, ID card, and biometric profile tracking setup.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I cancel my membership anytime? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes. All our plans are aggressively billed month-to-month. We don't force you into yearly lock-in contracts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Medical & Fitness Guidelines -->
+    <section class="section-padding bg-light">
+        <div class="container reveal">
+            <div class="section-header">
+                <h2 class="section-title">Medical Readiness</h2>
+                <p class="section-subtitle">Safety is our priority. Every athlete must meet the following medical standards before full-contact training.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div style="background: #fff; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;"><i class="fa-solid fa-file-medical" style="color: var(--secondary); margin-right: 0.5rem;"></i> Physical Clearance</h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">A signed fitness certificate from a registered pediatrician or GP is mandatory for students under 18.</p>
+                </div>
+                <div style="background: #fff; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;"><i class="fa-solid fa-droplet" style="color: var(--cta); margin-right: 0.5rem;"></i> Blood Grouping</h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Accurate blood group information must be provided for our emergency medical database during enrollment.</p>
+                </div>
+                <div style="background: #fff; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;"><i class="fa-solid fa-allergies" style="color: #ef4444; margin-right: 0.5rem;"></i> Allergy Disclosure</h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Any known allergies (food, environmental, or medical) must be declared to the head coach and campus medic.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Parent Engagement Portal -->
+    <section class="section-padding">
+        <div class="container reveal">
+            <div class="registration-wrapper" style="align-items: center; background: var(--primary); color: #fff; padding: 4rem; border-radius: 2rem; gap: 4rem;">
+                <div style="flex: 1;">
+                    <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1.5rem;">The Parent's Portal</h2>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 2rem;">We believe in a transparent partnership with parents. Our digital portal allows you to track your child's progress in real-time.</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;"><i class="fa-solid fa-check-circle" style="color: var(--cta);"></i> Weekly Skill Assessment Reports</li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;"><i class="fa-solid fa-check-circle" style="color: var(--cta);"></i> Nutrition & Diet Tracking</li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;"><i class="fa-solid fa-check-circle" style="color: var(--cta);"></i> Direct Chat with Head Coaches</li>
+                    </ul>
+                </div>
+                <div style="flex: 1; text-align: center;">
+                    <img src="https://images.unsplash.com/photo-1511886929837-354d827aae26?auto=format&fit=crop&w=600&q=80" style="width: 100%; border-radius: 1.5rem; box-shadow: var(--shadow-xl);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal Popup -->
+    <div class="modal" id="success-popup">
+        <div class="modal-content">
+            <i class="fa-solid fa-circle-check modal-icon"></i>
+            <h3 class="popup-title">Registration Received!</h3>
+            <p class="popup-text">Thank you. Your assessment request has been prioritized in our system. Our admissions manager will contact you within 12 hours to finalize the trial timing.</p>
+            <button class="btn btn-primary" onclick="closePopup()">Return to Home</button>
+        </div>
+    </div>
+
+    <!-- Shared Footer -->
+    <footer class="footer" style="margin-top: 0;">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo"><i class="fa-solid fa-trophy"></i> Elite<span>Sports</span></a>
+                    <p style="margin-bottom: 1.5rem;">The premier destination for athletes who want to unlock their full potential and train like professionals.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/elitesports" target="_blank" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/elitesports" target="_blank" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://twitter.com/elitesports" target="_blank" class="social-link" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://youtube.com/elitesports" target="_blank" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a>
+                        <a href="programs.html"><i class="fa-solid fa-chevron-right"></i> Programs</a>
+                        <a href="schedule.html"><i class="fa-solid fa-chevron-right"></i> Schedule</a>
+                        <a href="trainers.html"><i class="fa-solid fa-chevron-right"></i> Trainers</a>
+                        <a href="registration.html"><i class="fa-solid fa-chevron-right"></i> Registration</a>
+                        <a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a>
+                        <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a>
+                    </div>
+                </div>
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Contact Us</h4>
+                    <p style="margin-bottom: 0.5rem;"><i class="fa-solid fa-envelope"></i> info@elitesports.com</p>
+                    <p><i class="fa-solid fa-phone"></i> +1 (800) 123-4567</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Tech Park Phase 2</p>
+                </div>
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Newsletter</h4>
+                    <p style="margin-bottom: 1rem; font-size: 0.9rem;">Subscribe for academy updates and sports tips.</p>
+                    <form class="newsletter-form validate-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+                        <input type="email" placeholder="Email Address" required>
+                        <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Elite Sports Academy. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

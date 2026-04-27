@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 – Page Not Found | Elite Sports Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .error-page { min-height:100vh; background:linear-gradient(135deg,#1A0533 0%,#3b0764 50%,#0d1f3a 100%); display:flex; align-items:center; justify-content:center; text-align:center; position:relative; overflow:hidden; padding:2rem; }
+        .error-page::before { content:''; position:absolute; width:500px; height:500px; background:radial-gradient(circle,rgba(0,201,177,0.12) 0%,transparent 70%); border-radius:50%; top:-10%; right:-5%; animation:blob 10s ease-in-out infinite; }
+        .error-page::after { content:''; position:absolute; width:350px; height:350px; background:radial-gradient(circle,rgba(255,92,106,0.1) 0%,transparent 70%); border-radius:50%; bottom:-5%; left:-5%; animation:blob 12s ease-in-out infinite reverse; }
+        .error-content { position:relative; z-index:2; max-width:680px; }
+        .error-svg-wrap { margin-bottom:2rem; animation:float-slow 6s ease-in-out infinite; }
+        .error-code { font-family:'Outfit',sans-serif; font-size:8rem; font-weight:800; line-height:1; margin-bottom:0.5rem; background:linear-gradient(135deg,#00C9B1 0%,#a855f7 50%,#FF5C6A 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; background-size:200% auto; animation:shimmer 3s linear infinite; }
+        .error-title { font-family:'Outfit',sans-serif; font-size:2rem; color:#fff; font-weight:700; margin-bottom:1rem; }
+        .error-desc { color:rgba(255,255,255,0.65); font-size:1.05rem; line-height:1.8; margin-bottom:2.5rem; max-width:460px; margin-inline:auto; }
+        .error-actions { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2.5rem; }
+        .error-links { display:flex; gap:2rem; justify-content:center; flex-wrap:wrap; }
+        .error-links a { color:rgba(255,255,255,0.5); font-size:0.9rem; font-weight:500; transition:color 0.3s; display:flex; align-items:center; gap:0.4rem; }
+        .error-links a:hover { color:#00C9B1; }
+        @media(max-width:768px){
+            .error-page { padding: 2rem 1.25rem; }
+            .error-page::before { width: 300px; height: 300px; }
+            .error-page::after { width: 200px; height: 200px; }
+            .error-svg-wrap svg { width: 200px; height: 160px; }
+            .error-code { font-size: 6rem; }
+            .error-title { font-size: 1.7rem; }
+            .error-desc { font-size: 1rem; margin-bottom: 2rem; }
+            .error-actions { flex-direction: column; align-items: center; gap: 0.75rem; }
+            .error-actions .btn { width: 100%; max-width: 280px; justify-content: center; }
+            .error-links { gap: 1.5rem; }
+            .error-links a { font-size: 0.85rem; }
+        }
+        @media(max-width:480px){
+            .error-page { padding: 1.5rem 1rem; }
+            .error-svg-wrap svg { width: 170px; height: 135px; }
+            .error-code { font-size: 4.5rem; }
+            .error-title { font-size: 1.4rem; }
+            .error-desc { font-size: 0.92rem; line-height: 1.7; }
+            .error-links { gap: 1rem; }
+            .error-links a { font-size: 0.82rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="error-page">
+    <div class="error-content">
+        <div class="error-svg-wrap">
+            <svg width="240" height="190" viewBox="0 0 240 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="120" cy="182" rx="80" ry="8" fill="rgba(0,201,177,0.15)"/>
+                <rect x="97" y="157" width="46" height="11" rx="4" fill="#2d0a52" stroke="#00C9B1" stroke-width="1.5"/>
+                <rect x="107" y="147" width="26" height="11" rx="2" fill="#3b0764" stroke="#7c3aed" stroke-width="1.5"/>
+                <path d="M85 55 C80 95 102 135 120 140 C138 135 160 95 155 55 Z" fill="url(#tg)" stroke="#00C9B1" stroke-width="2"/>
+                <path d="M85 75 C66 75 60 60 72 55 L85 61" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" fill="none"/>
+                <path d="M155 75 C174 75 180 60 168 55 L155 61" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" fill="none"/>
+                <text x="105" y="108" font-size="26" fill="#FFCA28" opacity="0.9">★</text>
+                <text x="22" y="55" font-size="34" fill="#FF5C6A" opacity="0.75" font-weight="bold">?</text>
+                <text x="190" y="75" font-size="26" fill="#a855f7" opacity="0.75" font-weight="bold">?</text>
+                <text x="45" y="125" font-size="18" fill="#00C9B1" opacity="0.65" font-weight="bold">?</text>
+                <text x="182" y="135" font-size="20" fill="#FFCA28" opacity="0.65" font-weight="bold">?</text>
+                <defs>
+                    <linearGradient id="tg" x1="85" y1="55" x2="155" y2="140" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#7c3aed"/>
+                        <stop offset="100%" stop-color="#1A0533"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        <div class="error-code">404</div>
+        <h1 class="error-title">You're Off the Field!</h1>
+        <p class="error-desc">This page took an unexpected detour. It may have been moved or deleted. Let's get you back in the game!</p>
+        <div class="error-actions">
+            <a href="index.html" class="btn btn-primary"><i class="fa-solid fa-house" style="margin-right:8px;"></i> Back to Home</a>
+            <a href="programs.html" class="btn btn-outline">View Programs</a>
+        </div>
+        <div class="error-links">
+            <a href="schedule.html"><i class="fa-solid fa-calendar"></i> Schedule</a>
+            <a href="trainers.html"><i class="fa-solid fa-user-tie"></i> Trainers</a>
+            <a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+            <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

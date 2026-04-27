@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Sports Academy | Professional Training & Coaching</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏆</text></svg>">
+    <meta name="description" content="Unlock your athletic potential at Elite Sports Academy. Professional coaching in Cricket, Football, Tennis, and more with state-of-the-art facilities.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Shared Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-trophy"></i> Elite<span>Sports</span>
+            </a>
+            <button class="mobile-toggle" id="mobile-toggle">
+                <span class="hamburger"></span>
+            </button>
+                        <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="registration.html">Registration</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Upgrade -->
+    <section class="hero" id="home">
+        <!-- Background Video -->
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-athlete-running-on-a-track-40762-large.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        
+        <div class="container hero-layout">
+            <!-- Left: Text Content -->
+            <div class="hero-content reveal">
+                <span class="badge"><i class="fa-solid fa-star"></i> Admissions Open 2026</span>
+                <h1>Transform Passion Into <br><span>Elite Performance</span></h1>
+                <p>Train with professional coaches, access world-class facilities, and take your sports career to the absolute next level.</p>
+                
+                <div class="hero-btns">
+                    <a href="registration.html" class="btn btn-primary">Enroll Now <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
+                    <a href="programs.html" class="btn btn-outline">View Programs</a>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="trust-badges">
+                    <div class="trust-badge"><i class="fa-solid fa-certificate"></i> BWF & FIFA Certified</div>
+                    <div class="trust-badge"><i class="fa-solid fa-ranking-star"></i> 10+ Years Excellence</div>
+                    <div class="trust-badge"><i class="fa-solid fa-shield-halved"></i> 100% Safe Environment</div>
+                </div>
+            </div>
+
+            <!-- Right: Athlete Image -->
+            <div class="hero-image-wrap reveal-right">
+                <div class="hero-img-glow"></div>
+                <img src="assets/hero_athlete.png" alt="Elite Sports Athlete" class="hero-athlete-img">
+                <div class="hero-img-badge hero-img-badge-1">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>320+ Trophies</span>
+                </div>
+                <div class="hero-img-badge hero-img-badge-2">
+                    <i class="fa-solid fa-users"></i>
+                    <span>5000+ Athletes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Achievements Section -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <div class="stats-grid reveal">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="5000">0</div>
+                    <div class="stat-label">Students Trained</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="320">0</div>
+                    <div class="stat-label">Tournaments Won</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="45">0</div>
+                    <div class="stat-label">Active Batches</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Why Choose Us (6 Feature Cards) -->
+    <section class="section-padding bg-light" style="padding-top: 6rem;">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">The Elite Advantage</h2>
+                <p class="section-subtitle">We build champions through discipline, world-class infrastructure, and elite coaching methodologies.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-icon-wrapper"><i class="fa-solid fa-medal"></i></div>
+                    <h3>Certified Coaches</h3>
+                    <p>Learn directly from professionals who have competed at international and national levels.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon-wrapper"><i class="fa-solid fa-building-user"></i></div>
+                    <h3>Modern Facilities</h3>
+                    <p>Train in state-of-the-art indoor and outdoor stadiums equipped with modern tracking technology.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon-wrapper"><i class="fa-solid fa-bullseye"></i></div>
+                    <h3>Personal Training</h3>
+                    <p>1-on-1 focus to correct micro-mechanics, body posture, and enhance raw tactical skills.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon-wrapper"><i class="fa-solid fa-kit-medical"></i></div>
+                    <h3>Safety & Rehab</h3>
+                    <p>In-house physiotherapy and injury prevention protocols to keep athletes at 100%.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon-wrapper"><i class="fa-solid fa-trophy"></i></div>
+                    <h3>Elite Tournaments</h3>
+                    <p>Guaranteed participation in inter-academy, state, and club-level sports tournaments.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon-wrapper"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Progress Tracking</h3>
+                    <p>Monthly biometric and skill assessments documented and shared with parents dynamically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Programs Highlight (Top 3) -->
+    <section class="section-padding" style="margin-top: 3rem;">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Popular Programs</h2>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card reveal">
+                    <div class="program-img"><img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=600&q=80" alt="Cricket"><span class="program-category">Cricket Academy</span></div>
+                    <div class="program-content">
+                        <p class="program-desc">Comprehensive elite batting, bowling, and fielding coaching for match readiness.</p>
+                        <a href="programs.html" class="btn btn-outline" style="color:var(--text-dark); border-color:var(--border);">View Details</a>
+                    </div>
+                </div>
+                <div class="program-card reveal">
+                    <div class="program-img"><img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=600&q=80" alt="Football"><span class="program-category">Football Squad</span></div>
+                    <div class="program-content">
+                        <p class="program-desc">European-style football training combining tactical stamina and ball control.</p>
+                        <a href="programs.html" class="btn btn-outline" style="color:var(--text-dark); border-color:var(--border);">View Details</a>
+                    </div>
+                </div>
+                <div class="program-card reveal">
+                    <div class="program-img"><img src="https://images.unsplash.com/photo-1560012057-4372e14c5085?auto=format&fit=crop&w=600&q=80" alt="Tennis"><span class="program-category">Tennis Pro</span></div>
+                    <div class="program-content">
+                        <p class="program-desc">Focus on grip, baseline rallies, serves, and volleys on our synthetic courts.</p>
+                        <a href="programs.html" class="btn btn-outline" style="color:var(--text-dark); border-color:var(--border);">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="programs.html" class="btn btn-secondary reveal">View All Programs <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Transformation Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header reveal" style="margin-bottom: 1rem;">
+                <h2 class="section-title">The Elite Journey</h2>
+            </div>
+            
+            <div class="transformation reveal">
+                <div class="transform-images">
+                    <div class="transform-img-box">
+                        <span class="transform-label before">Day 1</span>
+                        <img src="https://images.unsplash.com/photo-1526566762798-8fac9c07aa98?auto=format&fit=crop&w=600&q=80" alt="Student novice">
+                    </div>
+                    <div class="transform-img-box">
+                        <span class="transform-label after">Year 2</span>
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=600&q=80" alt="Student professional">
+                    </div>
+                </div>
+                <div class="transform-content">
+                    <h3>From Beginner to Pro</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1.1rem;">"When I joined Elite Sports, I had raw talent but zero tactical awareness. The coaches rebuilt my fundamentals from scratch. The 1-on-1 video analysis sessions completely changed how I read the game."</p>
+                    <div style="padding-left: 1rem; border-left: 4px solid var(--cta);">
+                        <strong>David M.</strong>
+                        <p style="color: var(--secondary); font-size: 0.9rem; font-weight: 600;">Signed with State Level U-19 Club</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Facilities Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">World Class Infrastructure</h2>
+                <p class="section-subtitle">We spare no expense when it comes to providing the best tools for our athletes.</p>
+            </div>
+            
+            <div class="facilities-grid reveal">
+                <div class="facility-card">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80" alt="Gym">
+                    <div class="facility-overlay">
+                        <h4>High-Tech Gym</h4>
+                        <p>Specialized S&C equipment</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?auto=format&fit=crop&w=600&q=80" alt="Main Ground">
+                    <div class="facility-overlay">
+                        <h4>Floodlit Stadiums</h4>
+                        <p>Full-size turf and fields</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=600&q=80" alt="Indoor Courts">
+                    <div class="facility-overlay">
+                        <h4>Indoor Arenas</h4>
+                        <p>BWF approved wooden courts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Testimonials Upgrade -->
+    <section class="testimonials" id="testimonial-slider-container">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title" style="color:#fff;">What Parents & Players Say</h2>
+            </div>
+            <div class="testimonial-slider reveal">
+                <i class="fa-solid fa-quote-left quote-icon" style="opacity: 0.2; font-size: 5rem; position:absolute; top:2rem; left:2rem;"></i>
+                <div class="testimonial-content" id="testimonial-content">
+                    <div class="testi-header">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Arjun" class="testi-img">
+                        <div class="testi-info">
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <h4 class="testimonial-author">Arjun Patel</h4>
+                            <p class="testimonial-role">Cricket U-19 State Player</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Joining the academy completely transformed my game. The precision and dedication of the coaching staff is unmatched. Thanks to them, I just signed with a minor league team!"</p>
+                </div>
+                <div class="slider-dots">
+                    <div class="dot active" data-index="0"></div>
+                    <div class="dot" data-index="1"></div>
+                    <div class="dot" data-index="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FAQ Section (Home) -->
+    <section class="section-padding bg-light">
+        <div class="container faq-container reveal">
+            <div class="section-header">
+                <h2 class="section-title">Common Questions</h2>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">What is the minimum age to join the academy? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>We accept students starting from 6 years old. Specialized beginner batches focus heavily on motor skills and having fun with the sport.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do you offer free trial classes? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes! We offer a one-day free trial assessment. This allows coaches to evaluate the player's level and place them in the correct training batch.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Are the coaches certified? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Absolutely. All our head coaches hold minimum Level 2/3 certifications from their corresponding international sporting bodies (BWF, ICC, FIFA, etc.).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Are gym and fitness sessions included? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>For players aged 15 and above, strength and conditioning is a core part of the syllabus at no extra mandatory fee.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How do I register for a batch? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>You can start by filling out the Enrollment form on our website. Our admissions team will call you to schedule the initial trial.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Front CTA Banner -->
+    <section class="section-padding" style="padding-bottom: 2rem;">
+        <div class="container">
+            <div class="cta-banner reveal">
+                <h2>Ready to Start Your Journey?</h2>
+                <p>Limited slots available for the upcoming season. Register now to secure your place in our elite training program.</p>
+                <div style="display:flex; gap:1rem; justify-content:center;">
+                    <a href="registration.html" class="btn btn-primary" style="background:#fff; color:var(--cta);">Enroll Now</a>
+                    <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Final CTA + Contact strip -->
+    <div class="contact-strip reveal">
+        <div class="contact-strip-item">
+            <i class="fa-solid fa-phone"></i> Call Us: +1 (800) 123-4567
+        </div>
+        <div class="contact-strip-item">
+            <i class="fa-brands fa-whatsapp"></i> Whatsapp: +1 (800) 555-1212
+        </div>
+        <div class="contact-strip-item">
+            <i class="fa-solid fa-location-dot"></i> Tech Park Phase 2, Sports Complex
+        </div>
+    </div>
+
+    <!-- Shared Footer -->
+    <footer class="footer" style="margin-top: 0;">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo"><i class="fa-solid fa-trophy"></i> Elite<span>Sports</span></a>
+                    <p style="margin-bottom: 1.5rem;">The premier destination for athletes who want to unlock their full potential and train like professionals.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/elitesports" target="_blank" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/elitesports" target="_blank" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://twitter.com/elitesports" target="_blank" class="social-link" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://youtube.com/elitesports" target="_blank" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a>
+                        <a href="programs.html"><i class="fa-solid fa-chevron-right"></i> Programs</a>
+                        <a href="schedule.html"><i class="fa-solid fa-chevron-right"></i> Schedule</a>
+                        <a href="trainers.html"><i class="fa-solid fa-chevron-right"></i> Trainers</a>
+                        <a href="registration.html"><i class="fa-solid fa-chevron-right"></i> Registration</a>
+                        <a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a>
+                        <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a>
+                    </div>
+                </div>
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Contact Us</h4>
+                    <p style="margin-bottom: 0.5rem;"><i class="fa-solid fa-envelope"></i> info@elitesports.com</p>
+                    <p><i class="fa-solid fa-phone"></i> +1 (800) 123-4567</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Tech Park Phase 2</p>
+                </div>
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Newsletter</h4>
+                    <p style="margin-bottom: 1rem; font-size: 0.9rem;">Subscribe for academy updates and sports tips.</p>
+                    <form class="newsletter-form validate-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+                        <input type="email" placeholder="Email Address" required>
+                        <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Elite Sports Academy. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Update the slider logic specially for the new testimonial layout on homepage
+        document.addEventListener('DOMContentLoaded', () => {
+            const testimonialSlider = document.getElementById('testimonial-slider-container');
+            if (testimonialSlider) {
+                const testimonials = [
+                    { text: `"Joining the academy completely transformed my game. The precision and dedication of the coaching staff is unmatched. Thanks to them, I just signed with a minor league team!"`, author: "Arjun Patel", role: "Cricket U-19 State Player", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" },
+                    { text: `"My daughter's confidence has skyrocketed since she started football here. The environment is incredibly supportive yet competitive. It's the best sports facility in the city."`, author: "Priya Sharma", role: "Parent of U-14 Footballer", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80" },
+                    { text: `"The fitness and conditioning programs here are elite. I've been to many gyms, but the sport-specific training at this academy pushed me out of my plateau."`, author: "Michael T.", role: "Pro Fitness Member", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" }
+                ];
+
+                const contentDiv = document.getElementById('testimonial-content');
+                const dots = document.querySelectorAll('.dot');
+                if(!dots.length) return;
+                
+                let currentSlide = 0;
+                let slideInterval;
+
+                const updateSlider = (index) => {
+                    contentDiv.style.opacity = 0;
+                    setTimeout(() => {
+                        contentDiv.innerHTML = `
+                            <div class="testi-header">
+                                <img src="${testimonials[index].img}" alt="${testimonials[index].author}" class="testi-img">
+                                <div class="testi-info">
+                                    <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                    <h4 class="testimonial-author">${testimonials[index].author}</h4>
+                                    <p class="testimonial-role">${testimonials[index].role}</p>
+                                </div>
+                            </div>
+                            <p class="testimonial-text">${testimonials[index].text}</p>
+                        `;
+                        contentDiv.style.opacity = 1;
+                    }, 300);
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    if(dots[index]) dots[index].classList.add('active');
+                };
+
+                const nextSlide = () => {
+                    currentSlide = (currentSlide + 1) % testimonials.length;
+                    updateSlider(currentSlide);
+                };
+
+                slideInterval = setInterval(nextSlide, 5000);
+
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        clearInterval(slideInterval);
+                        currentSlide = index;
+                        updateSlider(currentSlide);
+                        slideInterval = setInterval(nextSlide, 5000);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

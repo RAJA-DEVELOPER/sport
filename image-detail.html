@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Detail | Elite Sports Academy</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏆</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .detail-page-header {
+            padding: 12rem 0 4rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--primary) 100%);
+        }
+        .detail-page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        .detail-container {
+            max-width: 1000px;
+            margin: -2rem auto 6rem;
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            position: relative;
+            z-index: 10;
+        }
+        .detail-img-wrapper {
+            width: 100%;
+            max-height: 700px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+        }
+        .detail-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            max-height: 700px;
+        }
+        .detail-content {
+            padding: 3rem;
+        }
+        .detail-badge {
+            display: inline-block;
+            background: rgba(0, 201, 177, 0.15);
+            color: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(0, 201, 177, 0.3);
+        }
+        .detail-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .detail-caption {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .back-btn:hover {
+            color: var(--accent);
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .detail-page-header { padding: 8rem 0 3rem; }
+            .detail-page-header h1 { font-size: 2.2rem; }
+            .detail-content { padding: 2rem 1.5rem; }
+            .detail-title { font-size: 1.8rem; }
+            .detail-caption { font-size: 1.05rem; }
+            .detail-container { margin: -1.5rem 0.75rem 4rem; }
+        }
+        @media (max-width: 480px) {
+            .detail-page-header { padding: 7rem 0 2.5rem; }
+            .detail-page-header h1 { font-size: 1.8rem; }
+            .detail-content { padding: 1.5rem 1rem; }
+            .detail-title { font-size: 1.5rem; }
+            .detail-caption { font-size: 1rem; line-height: 1.7; }
+            .detail-container { margin: -1rem 0.5rem 3rem; border-radius: 1rem; }
+            .detail-badge { font-size: 0.78rem; padding: 0.3rem 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Shared Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-trophy"></i> Elite<span>Sports</span>
+            </a>
+            <button class="mobile-toggle" id="mobile-toggle">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="registration.html">Registration</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="detail-page-header">
+        <div class="container">
+            <h1>Gallery Viewer</h1>
+        </div>
+    </header>
+
+    <!-- Detail Section -->
+    <section>
+        <div class="container">
+            <div class="detail-container reveal">
+                <div class="detail-img-wrapper">
+                    <img id="detail-img" src="" alt="Gallery Image">
+                </div>
+                <div class="detail-content">
+                    <span class="detail-badge" id="detail-category">Category</span>
+                    <h2 class="detail-title" id="detail-title">Loading...</h2>
+                    <p class="detail-caption" id="detail-caption">Please wait while the image details are loading.</p>
+                    <hr style="border: none; border-top: 1px solid var(--border); margin: 2rem 0;">
+                    <a href="gallery.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Gallery</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shared Footer -->
+    <footer class="footer" style="margin-top: 0;">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo"><i class="fa-solid fa-trophy"></i> Elite<span>Sports</span></a>
+                    <p style="margin-bottom: 1.5rem;">The premier destination for athletes who want to unlock their full potential and train like professionals.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a>
+                        <a href="programs.html"><i class="fa-solid fa-chevron-right"></i> Programs</a>
+                        <a href="schedule.html"><i class="fa-solid fa-chevron-right"></i> Schedule</a>
+                        <a href="trainers.html"><i class="fa-solid fa-chevron-right"></i> Trainers</a>
+                        <a href="registration.html"><i class="fa-solid fa-chevron-right"></i> Registration</a>
+                        <a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a>
+                        <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a>
+                    </div>
+                </div>
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Contact Us</h4>
+                    <p style="margin-bottom: 0.5rem;"><i class="fa-solid fa-envelope"></i> info@elitesports.com</p>
+                    <p><i class="fa-solid fa-phone"></i> +1 (800) 123-4567</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Tech Park Phase 2</p>
+                </div>
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Newsletter</h4>
+                    <p style="margin-bottom: 1rem; font-size: 0.9rem;">Subscribe for academy updates and sports tips.</p>
+                    <form class="newsletter-form validate-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+                        <input type="email" placeholder="Email Address" required>
+                        <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Elite Sports Academy. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const img = params.get('img');
+            const title = params.get('title');
+            const category = params.get('category');
+            const caption = params.get('caption');
+
+            if (img) document.getElementById('detail-img').src = img;
+            if (title) {
+                document.getElementById('detail-title').innerText = title;
+                document.title = title + " | Elite Sports Academy";
+            }
+            if (category) document.getElementById('detail-category').innerText = category;
+            if (caption) document.getElementById('detail-caption').innerText = caption;
+        });
+    </script>
+</body>
+</html>

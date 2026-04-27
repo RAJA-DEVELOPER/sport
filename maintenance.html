@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Maintenance | Elite Sports Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ── Page Shell ── */
+        .maint-page {
+            min-height: 100vh;
+            background: linear-gradient(145deg, #1A0533 0%, #2d0a52 40%, #0d1f3a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Ambient blobs */
+        .maint-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(70px);
+            animation: blob 10s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .maint-blob-1 { width:480px; height:480px; background:rgba(0,201,177,0.1);  top:-15%;  right:-8%;  animation-delay:0s; }
+        .maint-blob-2 { width:360px; height:360px; background:rgba(168,85,247,0.1); bottom:-10%; left:-5%;  animation-delay:-4s; }
+        .maint-blob-3 { width:260px; height:260px; background:rgba(255,92,106,0.08); top:40%;   left:10%;  animation-delay:-7s; }
+
+        /* ── Layout ── */
+        .maint-inner {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        /* ── SVG side ── */
+        .maint-svg-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: float-slow 7s ease-in-out infinite;
+        }
+
+        /* ── Text side ── */
+        .maint-content { color: #fff; }
+
+        .maint-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,202,40,0.12);
+            color: #FFCA28;
+            border: 1px solid rgba(255,202,40,0.3);
+            padding: 0.4rem 1.25rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(8px);
+        }
+        .maint-badge i { animation: spin-slow 3s linear infinite; }
+
+        .maint-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        .maint-title span {
+            background: linear-gradient(135deg, #00C9B1, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .maint-desc {
+            color: rgba(255,255,255,0.65);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            max-width: 420px;
+        }
+
+        /* Progress bar */
+        .maint-progress-wrap { margin-bottom: 2rem; }
+        .maint-progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.55);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .maint-progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .maint-progress-fill {
+            height: 100%;
+            width: 72%;
+            background: linear-gradient(90deg, #00C9B1, #a855f7, #FF5C6A);
+            border-radius: 8px;
+            background-size: 200% 100%;
+            animation: shimmer 2.5s linear infinite;
+        }
+
+        /* Timeline */
+        .maint-timeline {
+            border-left: 2px solid rgba(0,201,177,0.3);
+            padding-left: 1.5rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .tl-item {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        .tl-item::before {
+            content: '';
+            position: absolute;
+            left: -1.85rem;
+            top: 4px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 2px solid #00C9B1;
+            background: #1A0533;
+        }
+        .tl-item.done::before { background: #00C9B1; }
+        .tl-item.active::before { background: #FFCA28; border-color: #FFCA28; animation: ping 1.5s ease infinite; }
+        .tl-icon { font-size: 1rem; margin-top: 2px; }
+        .tl-item.done .tl-icon { color: #00C9B1; }
+        .tl-item.active .tl-icon { color: #FFCA28; }
+        .tl-item.pending .tl-icon { color: rgba(255,255,255,0.3); }
+        .tl-text h4 { font-family: 'Outfit', sans-serif; font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 0.15rem; }
+        .tl-text p { font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.4; }
+
+        /* Notify form */
+        .maint-notify { margin-bottom: 2rem; }
+        .maint-notify p { font-size: 0.9rem; color: rgba(255,255,255,0.55); margin-bottom: 0.75rem; }
+        .notify-form {
+            display: flex;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            max-width: 380px;
+        }
+        .notify-form input {
+            flex: 1;
+            padding: 0.85rem 1rem;
+            background: rgba(255,255,255,0.06);
+            border: none;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+        }
+        .notify-form input::placeholder { color: rgba(255,255,255,0.35); }
+        .notify-form input:focus { outline: none; background: rgba(255,255,255,0.1); }
+        .notify-form button {
+            padding: 0.85rem 1.25rem;
+            background: linear-gradient(135deg, #00C9B1, #7c3aed);
+            border: none;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+        }
+        .notify-form button:hover { opacity: 0.88; }
+
+        /* Social */
+        .maint-social { display: flex; gap: 0.75rem; }
+        .maint-social a {
+            width: 40px; height: 40px;
+            border-radius: 0.5rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex; align-items: center; justify-content: center;
+            color: rgba(255,255,255,0.6);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        .maint-social a:hover {
+            background: linear-gradient(135deg, #00C9B1, #7c3aed);
+            border-color: transparent;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* ── Responsive: Tablet ── */
+        @media (max-width: 900px) {
+            .maint-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2.5rem;
+            }
+            .maint-svg-wrap svg { width: 320px; height: 320px; }
+            .maint-desc { margin-inline: auto; max-width: 500px; }
+            .maint-badge { margin-inline: auto; display: inline-flex; }
+            .maint-timeline {
+                text-align: left;
+                max-width: 380px;
+                margin-inline: auto;
+            }
+            .maint-notify { max-width: 420px; margin-inline: auto; }
+            .notify-form { max-width: 100%; }
+            .maint-social { justify-content: center; }
+            .maint-progress-wrap { max-width: 420px; margin-inline: auto; }
+            .maint-title { font-size: 2.8rem; }
+            .maint-blob-1 { width: 320px; height: 320px; }
+            .maint-blob-2 { width: 250px; height: 250px; }
+            .maint-blob-3 { width: 180px; height: 180px; }
+        }
+
+        /* ── Responsive: Large Mobile ── */
+        @media (max-width: 600px) {
+            .maint-page { padding: 2rem 1rem; }
+            .maint-inner { gap: 2rem; }
+            .maint-svg-wrap svg { width: 260px; height: 260px; }
+            .maint-title { font-size: 2.3rem; }
+            .maint-desc { font-size: 0.95rem; line-height: 1.7; max-width: 100%; }
+            .maint-progress-wrap { max-width: 100%; }
+            .maint-notify { max-width: 100%; }
+            .notify-form { flex-direction: column; border-radius: 0.75rem; }
+            .notify-form input {
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                border-radius: 0.75rem 0.75rem 0 0;
+                text-align: center;
+            }
+            .notify-form button { border-radius: 0 0 0.75rem 0.75rem; padding: 0.9rem; }
+            .maint-timeline { max-width: 100%; padding-left: 1.25rem; }
+            .tl-text h4 { font-size: 0.9rem; }
+            .tl-text p { font-size: 0.78rem; }
+            .maint-social a { width: 38px; height: 38px; font-size: 0.9rem; }
+        }
+
+        /* ── Responsive: Small Mobile ── */
+        @media (max-width: 400px) {
+            .maint-page { padding: 1.5rem 0.75rem; }
+            .maint-svg-wrap svg { width: 220px; height: 220px; }
+            .maint-title { font-size: 1.9rem; line-height: 1.15; }
+            .maint-desc { font-size: 0.9rem; }
+            .maint-badge { font-size: 0.78rem; padding: 0.35rem 1rem; }
+            .maint-progress-label { font-size: 0.8rem; }
+            .maint-social { gap: 0.5rem; }
+            .maint-social a { width: 36px; height: 36px; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="maint-page">
+
+    <!-- Ambient blobs -->
+    <div class="maint-blob maint-blob-1"></div>
+    <div class="maint-blob maint-blob-2"></div>
+    <div class="maint-blob maint-blob-3"></div>
+
+    <div class="maint-inner">
+
+        <!-- LEFT: SVG Illustration -->
+        <div class="maint-svg-wrap">
+            <svg width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                <!-- Ground / shadow -->
+                <ellipse cx="210" cy="395" rx="140" ry="14" fill="rgba(0,201,177,0.12)"/>
+
+                <!-- ── Gear (large, background) ── -->
+                <g transform="translate(210,195)" style="animation:spin-slow 12s linear infinite; transform-origin:0 0;">
+                    <circle cx="0" cy="0" r="80" fill="none" stroke="rgba(0,201,177,0.15)" stroke-width="18"/>
+                    <circle cx="0" cy="0" r="30" fill="rgba(0,201,177,0.08)" stroke="rgba(0,201,177,0.3)" stroke-width="3"/>
+                    <!-- Gear teeth -->
+                    <rect x="-7" y="-98" width="14" height="20" rx="3" fill="rgba(0,201,177,0.3)"/>
+                    <rect x="-7" y="78" width="14" height="20" rx="3" fill="rgba(0,201,177,0.3)"/>
+                    <rect x="78" y="-7" width="20" height="14" rx="3" fill="rgba(0,201,177,0.3)"/>
+                    <rect x="-98" y="-7" width="20" height="14" rx="3" fill="rgba(0,201,177,0.3)"/>
+                    <rect x="52" y="-75" width="14" height="20" rx="3" fill="rgba(0,201,177,0.3)" transform="rotate(45)"/>
+                    <rect x="-68" y="52" width="14" height="20" rx="3" fill="rgba(0,201,177,0.3)" transform="rotate(45)"/>
+                    <rect x="52" y="55" width="14" height="20" rx="3" fill="rgba(0,201,177,0.3)" transform="rotate(-45)"/>
+                    <rect x="-68" y="-75" width="14" height="20" rx="3" fill="rgba(0,201,177,0.3)" transform="rotate(-45)"/>
+                </g>
+
+                <!-- ── Small gear (top right) ── -->
+                <g transform="translate(318,110)" style="animation:spin-slow 7s linear infinite reverse; transform-origin:0 0;">
+                    <circle cx="0" cy="0" r="38" fill="none" stroke="rgba(168,85,247,0.2)" stroke-width="10"/>
+                    <circle cx="0" cy="0" r="14" fill="rgba(168,85,247,0.1)" stroke="rgba(168,85,247,0.4)" stroke-width="2"/>
+                    <rect x="-5" y="-47" width="10" height="14" rx="2" fill="rgba(168,85,247,0.4)"/>
+                    <rect x="-5" y="33" width="10" height="14" rx="2" fill="rgba(168,85,247,0.4)"/>
+                    <rect x="33" y="-5" width="14" height="10" rx="2" fill="rgba(168,85,247,0.4)"/>
+                    <rect x="-47" y="-5" width="14" height="10" rx="2" fill="rgba(168,85,247,0.4)"/>
+                </g>
+
+                <!-- ── Wrench ── -->
+                <g transform="translate(130,120) rotate(-30)">
+                    <!-- Handle -->
+                    <rect x="-8" y="20" width="16" height="110" rx="8" fill="url(#wrenchGrad)"/>
+                    <!-- Head -->
+                    <rect x="-22" y="-20" width="44" height="44" rx="10" fill="url(#wrenchGrad)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+                    <rect x="-10" y="-10" width="20" height="20" rx="4" fill="#1A0533"/>
+                    <!-- Grip lines on handle -->
+                    <line x1="-7" y1="55" x2="7" y2="55" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="-7" y1="70" x2="7" y2="70" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="-7" y1="85" x2="7" y2="85" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round"/>
+                </g>
+
+                <!-- ── Hard hat ── -->
+                <g transform="translate(270,270)">
+                    <!-- Brim -->
+                    <ellipse cx="0" cy="10" rx="55" ry="10" fill="#FFCA28" opacity="0.9"/>
+                    <!-- Dome -->
+                    <path d="M-45 10 C-45,-35 45,-35 45,10 Z" fill="#FFCA28"/>
+                    <!-- Stripe -->
+                    <path d="M-42 5 C-42,-30 42,-30 42,5" stroke="rgba(255,255,255,0.4)" stroke-width="5" fill="none" stroke-linecap="round"/>
+                </g>
+
+                <!-- ── Caution cone ── -->
+                <g transform="translate(145,290)">
+                    <polygon points="0,-55 30,25 -30,25" fill="#FF5C6A" opacity="0.85"/>
+                    <rect x="-35" y="25" width="70" height="10" rx="4" fill="#FF5C6A" opacity="0.7"/>
+                    <!-- White stripes on cone -->
+                    <polygon points="-8,-10 8,-10 18,10 -18,10" fill="rgba(255,255,255,0.3)"/>
+                </g>
+
+                <!-- ── Spanner bolt icon (centre) ── -->
+                <circle cx="210" cy="195" r="22" fill="rgba(255,202,40,0.15)" stroke="#FFCA28" stroke-width="2" stroke-dasharray="4 3"/>
+                <text x="200" y="202" font-size="22" fill="#FFCA28">⚙</text>
+
+                <!-- ── Floating dots (screws / bolts) ── -->
+                <circle cx="80"  cy="150" r="5" fill="rgba(0,201,177,0.5)"/>
+                <circle cx="340" cy="260" r="4" fill="rgba(255,92,106,0.5)"/>
+                <circle cx="90"  cy="300" r="3" fill="rgba(168,85,247,0.5)"/>
+                <circle cx="350" cy="150" r="6" fill="rgba(255,202,40,0.4)"/>
+                <circle cx="170" cy="60"  r="4" fill="rgba(0,201,177,0.4)"/>
+
+                <!-- ── Construction barrier ── -->
+                <g transform="translate(55,360)">
+                    <!-- Left post -->
+                    <rect x="0" y="-40" width="8" height="40" rx="3" fill="rgba(255,255,255,0.2)"/>
+                    <!-- Right post -->
+                    <rect x="250" y="-40" width="8" height="40" rx="3" fill="rgba(255,255,255,0.2)"/>
+                    <!-- Barrier board -->
+                    <rect x="0" y="-38" width="258" height="22" rx="4" fill="#FF5C6A" opacity="0.75"/>
+                    <!-- Diagonal stripes -->
+                    <clipPath id="barrierClip"><rect x="0" y="-38" width="258" height="22" rx="4"/></clipPath>
+                    <g clip-path="url(#barrierClip)">
+                        <line x1="0"   y1="-38" x2="22"  y2="-16" stroke="rgba(255,255,255,0.35)" stroke-width="10"/>
+                        <line x1="36"  y1="-38" x2="58"  y2="-16" stroke="rgba(255,255,255,0.35)" stroke-width="10"/>
+                        <line x1="72"  y1="-38" x2="94"  y2="-16" stroke="rgba(255,255,255,0.35)" stroke-width="10"/>
+                        <line x1="108" y1="-38" x2="130" y2="-16" stroke="rgba(255,255,255,0.35)" stroke-width="10"/>
+                        <line x1="144" y1="-38" x2="166" y2="-16" stroke="rgba(255,255,255,0.35)" stroke-width="10"/>
+                        <line x1="180" y1="-38" x2="202" y2="-16" stroke="rgba(255,255,255,0.35)" stroke-width="10"/>
+                        <line x1="216" y1="-38" x2="238" y2="-16" stroke="rgba(255,255,255,0.35)" stroke-width="10"/>
+                    </g>
+                </g>
+
+                <defs>
+                    <linearGradient id="wrenchGrad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#7c3aed"/>
+                        <stop offset="100%" stop-color="#00C9B1"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <!-- RIGHT: Text Content -->
+        <div class="maint-content">
+
+            <div class="maint-badge">
+                <i class="fa-solid fa-gear"></i> Under Maintenance
+            </div>
+
+            <h1 class="maint-title">
+                We're Upgrading<br>
+                <span>Our Playfield!</span>
+            </h1>
+
+            <p class="maint-desc">
+                Elite Sports Academy is currently undergoing scheduled maintenance to bring you an even better experience. Our team is working hard — we'll be back soon, stronger than ever!
+            </p>
+
+            <!-- Progress -->
+            <div class="maint-progress-wrap">
+                <div class="maint-progress-label">
+                    <span>Upgrade Progress</span>
+                    <span>72%</span>
+                </div>
+                <div class="maint-progress-bar">
+                    <div class="maint-progress-fill"></div>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="maint-timeline">
+                <div class="tl-item done">
+                    <i class="fa-solid fa-check-circle tl-icon"></i>
+                    <div class="tl-text">
+                        <h4>Database Upgrade</h4>
+                        <p>Completed successfully</p>
+                    </div>
+                </div>
+                <div class="tl-item done">
+                    <i class="fa-solid fa-check-circle tl-icon"></i>
+                    <div class="tl-text">
+                        <h4>Performance Optimization</h4>
+                        <p>Completed successfully</p>
+                    </div>
+                </div>
+                <div class="tl-item active">
+                    <i class="fa-solid fa-spinner tl-icon fa-spin"></i>
+                    <div class="tl-text">
+                        <h4>UI &amp; Feature Rollout</h4>
+                        <p>In progress — almost done!</p>
+                    </div>
+                </div>
+                <div class="tl-item pending">
+                    <i class="fa-solid fa-clock tl-icon"></i>
+                    <div class="tl-text">
+                        <h4>Final Testing &amp; Launch</h4>
+                        <p>Scheduled — coming up next</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notify form -->
+            <div class="maint-notify">
+                <p><i class="fa-solid fa-bell" style="color:#FFCA28; margin-right:6px;"></i> Get notified when we're back:</p>
+                <div class="notify-form">
+                    <input type="email" placeholder="Enter your email address">
+                    <button type="button" onclick="this.textContent='✓ Done!'; this.style.background='#16a34a';">Notify Me</button>
+                </div>
+            </div>
+
+            <!-- Social links -->
+            <div class="maint-social">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Schedule & Batches | Elite Sports Academy</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏆</text></svg>">
+    <meta name="description" content="View our interactive sports academy schedule. Filter by sport, age group, and skill level to find the perfect training batch for your needs.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Shared Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-trophy"></i> Elite<span>Sports</span>
+            </a>
+            <button class="mobile-toggle" id="mobile-toggle">
+                <span class="hamburger"></span>
+            </button>
+                        <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="registration.html">Registration</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Batch Timing & Availability</h1>
+            <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 1.5rem; font-size: 1.1rem;">Select your desired filters below to match the perfect timing and skill level batch that suits your schedule.</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <span>/</span> Schedule
+            </div>
+        </div>
+    </header>
+
+    <!-- Schedule Section -->
+    <section class="section-padding" id="schedule" style="position: relative;">
+        <div class="container">
+            
+            <!-- Sticky Filter Bar -->
+            <div class="sticky-filter-wrap">
+                <div class="sticky-filter-bar reveal">
+                    <div class="adv-filter">
+                        <label for="filter-sport">Sport Program</label>
+                        <select id="filter-sport" class="adv-select">
+                            <option value="all">All Sports</option>
+                            <option value="cricket">Cricket</option>
+                            <option value="football">Football</option>
+                            <option value="tennis">Tennis</option>
+                            <option value="badminton">Badminton</option>
+                            <option value="basketball">Basketball</option>
+                        </select>
+                    </div>
+                    <div class="adv-filter">
+                        <label for="filter-age">Age Group</label>
+                        <select id="filter-age" class="adv-select">
+                            <option value="all">All Ages</option>
+                            <option value="u10">U-10 (6 to 9 yrs)</option>
+                            <option value="u14">U-14 (10 to 13 yrs)</option>
+                            <option value="u19">U-19 (14 to 18 yrs)</option>
+                            <option value="senior">Senior (19+ yrs)</option>
+                        </select>
+                    </div>
+                    <div class="adv-filter">
+                        <label for="filter-level">Skill Level</label>
+                        <select id="filter-level" class="adv-select">
+                            <option value="all">All Levels</option>
+                            <option value="beginner">Beginner / Novice</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="pro">Pro / Advanced</option>
+                        </select>
+                    </div>
+                    <div class="adv-filter">
+                        <label for="filter-time">Time Slot</label>
+                        <select id="filter-time" class="adv-select">
+                            <option value="all">All Slots</option>
+                            <option value="morning">Morning (5am - 9am)</option>
+                            <option value="evening">Evening (4pm - 8pm)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weekly Calendar Layout -->
+            <div class="weekly-calendar reveal">
+                
+                <!-- Monday Column -->
+                <div class="cal-day-col">
+                    <div class="cal-day-title">Monday</div>
+                    
+                    <div class="batch-card" data-sport="cricket" data-age="u14" data-level="intermediate" data-time="morning">
+                        <div class="bc-header">
+                            <span class="bc-title">Cricket U-14</span>
+                            <span class="seats-indicator green">4 Seats</span>
+                        </div>
+                        <div class="bc-time">06:00 AM - 08:30 AM</div>
+                        <div class="bc-detail"><i class="fa-solid fa-layer-group"></i> Intermediate</div>
+                        <div class="bc-detail"><i class="fa-solid fa-user-tie"></i> Coach Rajesh</div>
+                        <a href="registration.html?program=cricket" class="btn btn-primary" style="padding:0.25rem; font-size:0.8rem; margin-top:0.5rem;">Register</a>
+                    </div>
+                    
+                    <div class="batch-card" data-sport="football" data-age="senior" data-level="pro" data-time="evening">
+                        <div class="bc-header">
+                            <span class="bc-title">Football Pro</span>
+                            <span class="seats-indicator red">Full</span>
+                        </div>
+                        <div class="bc-time">06:00 PM - 08:30 PM</div>
+                        <div class="bc-detail"><i class="fa-solid fa-layer-group"></i> Advanced</div>
+                        <div class="bc-detail"><i class="fa-solid fa-user-tie"></i> Coach Anita</div>
+                    </div>
+                </div>
+
+                <!-- Tuesday Column -->
+                <div class="cal-day-col">
+                    <div class="cal-day-title">Tuesday</div>
+                    
+                    <div class="batch-card" data-sport="tennis" data-age="u19" data-level="pro" data-time="morning">
+                        <div class="bc-header">
+                            <span class="bc-title">Tennis Elite</span>
+                            <span class="seats-indicator orange">2 Seats</span>
+                        </div>
+                        <div class="bc-time">05:30 AM - 07:30 AM</div>
+                        <div class="bc-detail"><i class="fa-solid fa-layer-group"></i> Pro Level</div>
+                        <div class="bc-detail"><i class="fa-solid fa-user-tie"></i> Coach Vikram</div>
+                        <a href="registration.html?program=tennis" class="btn btn-primary" style="padding:0.25rem; font-size:0.8rem; margin-top:0.5rem;">Register</a>
+                    </div>
+
+                    <div class="batch-card" data-sport="basketball" data-age="u14" data-level="beginner" data-time="evening">
+                        <div class="bc-header">
+                            <span class="bc-title">Basketball</span>
+                            <span class="seats-indicator green">10 Seats</span>
+                        </div>
+                        <div class="bc-time">04:30 PM - 06:30 PM</div>
+                        <div class="bc-detail"><i class="fa-solid fa-layer-group"></i> Beginner</div>
+                        <div class="bc-detail"><i class="fa-solid fa-user-tie"></i> Coach Marcus</div>
+                        <a href="registration.html?program=basketball" class="btn btn-primary" style="padding:0.25rem; font-size:0.8rem; margin-top:0.5rem;">Register</a>
+                    </div>
+                </div>
+
+                <!-- Wednesday Column -->
+                <div class="cal-day-col">
+                    <div class="cal-day-title">Wednesday</div>
+                    
+                    <div class="batch-card" data-sport="cricket" data-age="u14" data-level="intermediate" data-time="morning">
+                        <div class="bc-header">
+                            <span class="bc-title">Cricket U-14</span>
+                            <span class="seats-indicator green">4 Seats</span>
+                        </div>
+                        <div class="bc-time">06:00 AM - 08:30 AM</div>
+                        <div class="bc-detail"><i class="fa-solid fa-layer-group"></i> Intermediate</div>
+                        <div class="bc-detail"><i class="fa-solid fa-user-tie"></i> Coach Rajesh</div>
+                        <a href="registration.html?program=cricket" class="btn btn-primary" style="padding:0.25rem; font-size:0.8rem; margin-top:0.5rem;">Register</a>
+                    </div>
+
+                    <div class="batch-card" data-sport="badminton" data-age="u10" data-level="beginner" data-time="evening">
+                        <div class="bc-header">
+                            <span class="bc-title">Badminton Kids</span>
+                            <span class="seats-indicator green">8 Seats</span>
+                        </div>
+                        <div class="bc-time">04:00 PM - 05:00 PM</div>
+                        <div class="bc-detail"><i class="fa-solid fa-layer-group"></i> Beginner</div>
+                        <div class="bc-detail"><i class="fa-solid fa-user-tie"></i> Coach Prakash</div>
+                        <a href="registration.html?program=badminton" class="btn btn-primary" style="padding:0.25rem; font-size:0.8rem; margin-top:0.5rem;">Register</a>
+                    </div>
+                </div>
+
+                <!-- Thursday Column -->
+                <div class="cal-day-col">
+                    <div class="cal-day-title">Thursday</div>
+
+                    <div class="batch-card" data-sport="tennis" data-age="u19" data-level="pro" data-time="morning">
+                        <div class="bc-header">
+                            <span class="bc-title">Tennis Elite</span>
+                            <span class="seats-indicator orange">2 Seats</span>
+                        </div>
+                        <div class="bc-time">05:30 AM - 07:30 AM</div>
+                        <div class="bc-detail"><i class="fa-solid fa-layer-group"></i> Pro Level</div>
+                        <div class="bc-detail"><i class="fa-solid fa-user-tie"></i> Coach Vikram</div>
+                        <a href="registration.html?program=tennis" class="btn btn-primary" style="padding:0.25rem; font-size:0.8rem; margin-top:0.5rem;">Register</a>
+                    </div>
+                    
+                    <div class="batch-card" data-sport="basketball" data-age="u14" data-level="beginner" data-time="evening">
+                        <div class="bc-header">
+                            <span class="bc-title">Basketball</span>
+                            <span class="seats-indicator green">10 Seats</span>
+                        </div>
+                        <div class="bc-time">04:30 PM - 06:30 PM</div>
+                        <div class="bc-detail"><i class="fa-solid fa-layer-group"></i> Beginner</div>
+                        <div class="bc-detail"><i class="fa-solid fa-user-tie"></i> Coach Marcus</div>
+                        <a href="registration.html?program=basketball" class="btn btn-primary" style="padding:0.25rem; font-size:0.8rem; margin-top:0.5rem;">Register</a>
+                    </div>
+                </div>
+
+                <!-- Friday Column -->
+                <div class="cal-day-col">
+                    <div class="cal-day-title">Friday</div>
+
+                    <div class="batch-card" data-sport="cricket" data-age="u14" data-level="intermediate" data-time="morning">
+                        <div class="bc-header">
+                            <span class="bc-title">Cricket U-14</span>
+                            <span class="seats-indicator green">4 Seats</span>
+                        </div>
+                        <div class="bc-time">06:00 AM - 08:30 AM</div>
+                        <div class="bc-detail"><i class="fa-solid fa-layer-group"></i> Intermediate</div>
+                        <div class="bc-detail"><i class="fa-solid fa-user-tie"></i> Coach Rajesh</div>
+                        <a href="registration.html?program=cricket" class="btn btn-primary" style="padding:0.25rem; font-size:0.8rem; margin-top:0.5rem;">Register</a>
+                    </div>
+                    
+                    <div class="batch-card" data-sport="football" data-age="senior" data-level="pro" data-time="evening">
+                        <div class="bc-header">
+                            <span class="bc-title">Football Pro</span>
+                            <span class="seats-indicator red">Full</span>
+                        </div>
+                        <div class="bc-time">06:00 PM - 08:30 PM</div>
+                        <div class="bc-detail"><i class="fa-solid fa-layer-group"></i> Advanced</div>
+                        <div class="bc-detail"><i class="fa-solid fa-user-tie"></i> Coach Anita</div>
+                    </div>
+                </div>
+
+                <!-- Weekend Column -->
+                <div class="cal-day-col">
+                    <div class="cal-day-title weekend">Weekend</div>
+                    <div class="batch-card" data-sport="tennis" data-age="u10" data-level="beginner" data-time="morning">
+                        <div class="bc-header">
+                            <span class="bc-title">Weekend Tennis</span>
+                            <span class="seats-indicator green">Open</span>
+                        </div>
+                        <div class="bc-time">07:00 AM - 10:00 AM</div>
+                        <div class="bc-detail"><i class="fa-solid fa-layer-group"></i> Beginner</div>
+                        <div class="bc-detail"><i class="fa-solid fa-user-tie"></i> Coach Vikram</div>
+                        <a href="registration.html?program=tennis" class="btn btn-primary" style="padding:0.25rem; font-size:0.8rem; margin-top:0.5rem;">Register</a>
+                    </div>
+                    <div class="batch-card" data-sport="cricket" data-age="senior" data-level="pro" data-time="evening">
+                        <div class="bc-header">
+                            <span class="bc-title">Corporate Cricket</span>
+                            <span class="seats-indicator orange">Limited</span>
+                        </div>
+                        <div class="bc-time">04:00 PM - 07:00 PM</div>
+                        <div class="bc-detail"><i class="fa-solid fa-layer-group"></i> Pro/Social</div>
+                        <div class="bc-detail"><i class="fa-solid fa-user-tie"></i> Coach Rajesh</div>
+                        <a href="registration.html?program=cricket" class="btn btn-primary" style="padding:0.25rem; font-size:0.8rem; margin-top:0.5rem;">Register</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Enhanced Notices -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="notice-box reveal" style="margin-top: 0; background: rgba(37, 99, 235, 0.1); border-left-color: var(--secondary);">
+                    <h4 style="color: var(--secondary);"><i class="fa-solid fa-cloud-bolt"></i> Weather Policy</h4>
+                    <p>In the event of heavy rain or thunderstorms, all outdoor training sessions will automatically migrate to the theoretical video-analysis room or the indoor physical conditioning gym. Timings remain identical.</p>
+                </div>
+                <div class="notice-box reveal" style="margin-top: 0;">
+                    <h4><i class="fa-solid fa-bell"></i> Upcoming Holidays</h4>
+                    <p>The academy outdoor pitches will be entirely closed for annual maintenance from <strong>22nd December to 2nd January</strong>. Gyms and indoor tennis courts remain open for Pro-level members.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- NEW: Training Phases -->
+    <section class="section-padding bg-light">
+        <div class="container reveal">
+            <div class="section-header">
+                <h2 class="section-title">Annual Training Roadmap</h2>
+                <p class="section-subtitle">We follow a structured periodization model to ensure peak performance for all athletes.</p>
+            </div>
+            <div class="phase-grid">
+                <div class="phase-card">
+                    <h4>Pre-Season</h4>
+                    <span class="phase-duration">Jan - Mar</span>
+                    <p>Focus on foundational strength, endurance, and basic technical drills.</p>
+                </div>
+                <div class="phase-card active">
+                    <h4>In-Season</h4>
+                    <span class="phase-duration">Apr - Sep</span>
+                    <p>Advanced tactics, match practice, and league participation.</p>
+                </div>
+                <div class="phase-card">
+                    <h4>Post-Season</h4>
+                    <span class="phase-duration">Oct - Nov</span>
+                    <p>Recovery, biomechanical analysis, and specialized skill workshops.</p>
+                </div>
+                <div class="phase-card">
+                    <h4>Off-Season</h4>
+                    <span class="phase-duration">December</span>
+                    <p>Rest, recuperation, and light recreational sports activities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Holiday Calendar -->
+    <section class="section-padding">
+        <div class="container reveal">
+            <div class="section-header">
+                <h2 class="section-title">Upcoming Academy Holidays</h2>
+                <p class="section-subtitle">Please note that regular training sessions will not be held on these dates.</p>
+            </div>
+            <div class="holiday-list">
+                <div class="holiday-item">
+                    <div class="h-date">May 01</div>
+                    <div class="h-name">Labor Day</div>
+                    <div class="h-status">Closed</div>
+                </div>
+                <div class="holiday-item">
+                    <div class="h-date">Aug 15</div>
+                    <div class="h-name">Independence Day</div>
+                    <div class="h-status">Closed</div>
+                </div>
+                <div class="holiday-item">
+                    <div class="h-date">Dec 25</div>
+                    <div class="h-name">Christmas Break</div>
+                    <div class="h-status">Closed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Attendance & Venue Policy -->
+    <section class="section-padding bg-dark" style="background: var(--primary); color: #fff; margin-top: 2rem; margin-bottom: 6rem; border-radius: var(--radius-xl);">
+        <div class="container reveal">
+            <div class="policy-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div>
+                    <h2 class="section-title" style="color: #fff; text-align: left;">Attendance Policy</h2>
+                    <ul style="list-style: none; margin-top: 1.5rem;">
+                        <li style="margin-bottom: 1rem; display: flex; gap: 1rem;"><i class="fa-solid fa-circle-info" style="color: var(--cta); margin-top: 4px;"></i> 80% attendance is mandatory for tournament selection.</li>
+                        <li style="margin-bottom: 1rem; display: flex; gap: 1rem;"><i class="fa-solid fa-circle-info" style="color: var(--cta); margin-top: 4px;"></i> Please notify coaches 4 hours in advance via the app for absences.</li>
+                        <li style="display: flex; gap: 1rem;"><i class="fa-solid fa-circle-info" style="color: var(--cta); margin-top: 4px;"></i> Makeup sessions are only available for medical emergencies.</li>
+                    </ul>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: var(--radius-lg); border: 1px dashed rgba(255,255,255,0.3);">
+                    <h4 style="margin-bottom: 1rem;"><i class="fa-solid fa-map-location-dot" style="margin-right: 0.5rem;"></i> Venue Notice</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.9;">All evening batches for Football and Cricket will held at the <strong>Main Stadium (Complex A)</strong>. Morning sessions for Tennis and Basketball remain at the <strong>Indoor Multi-purpose Hall</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shared Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo"><i class="fa-solid fa-trophy"></i> Elite<span>Sports</span></a>
+                    <p style="margin-bottom: 1.5rem;">The premier destination for athletes who want to unlock their full potential and train like professionals.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/elitesports" target="_blank" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/elitesports" target="_blank" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://twitter.com/elitesports" target="_blank" class="social-link" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://youtube.com/elitesports" target="_blank" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a>
+                        <a href="programs.html"><i class="fa-solid fa-chevron-right"></i> Programs</a>
+                        <a href="schedule.html"><i class="fa-solid fa-chevron-right"></i> Schedule</a>
+                        <a href="trainers.html"><i class="fa-solid fa-chevron-right"></i> Trainers</a>
+                        <a href="registration.html"><i class="fa-solid fa-chevron-right"></i> Registration</a>
+                        <a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a>
+                        <a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a>
+                    </div>
+                </div>
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Contact Us</h4>
+                    <p style="margin-bottom: 0.5rem;"><i class="fa-solid fa-envelope"></i> info@elitesports.com</p>
+                    <p><i class="fa-solid fa-phone"></i> +1 (800) 123-4567</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Tech Park Phase 2</p>
+                </div>
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Newsletter</h4>
+                    <p style="margin-bottom: 1rem; font-size: 0.9rem;">Subscribe for academy updates and sports tips.</p>
+                    <form class="newsletter-form validate-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+                        <input type="email" placeholder="Email Address" required>
+                        <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Elite Sports Academy. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
