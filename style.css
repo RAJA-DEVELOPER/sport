@@ -970,7 +970,8 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .map-embed { height: 300px; margin-top: -2rem; }
   .branches-grid { grid-template-columns: 1fr; }
   .branch-card { display: flex; flex-direction: column; padding: 1.75rem; }
-  .branch-tag { position: static; align-self: flex-start; margin-bottom: 0.75rem; font-size: 0.7rem; }
+  .branch-tag { position: absolute; top: 1rem; right: 1rem; font-size: 0.7rem; padding: 0.25rem 0.6rem; }
+  .branch-card h4 { padding-right: 5rem; }
 
   /* Registration */
   .reg-layout { grid-template-columns: 1fr; gap: 2rem; }
@@ -1135,7 +1136,8 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .directions-guide { padding: 1.25rem; }
   .branches-grid { grid-template-columns: 1fr; gap: 1rem; }
   .branch-card { display: flex; flex-direction: column; padding: 1.25rem; }
-  .branch-tag { position: static; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.68rem; padding: 0.2rem 0.6rem; order: -1; }
+  .branch-tag { position: absolute; top: 0.85rem; right: 0.85rem; font-size: 0.65rem; padding: 0.2rem 0.5rem; }
+  .branch-card h4 { padding-right: 4.5rem; }
 
   /* Testimonials */
   .testimonial-slider { padding: 1.5rem 1rem; }
