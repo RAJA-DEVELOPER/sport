@@ -1016,9 +1016,9 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   /* Footer */
   .footer { padding: 4rem 0 1.5rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
-  .newsletter-form { flex-direction: column; border-radius: 0.5rem; }
-  .newsletter-form input { border-radius: 0.5rem; }
-  .newsletter-form button { border-radius: 0.5rem; padding: 0.75rem; }
+  .newsletter-form { flex-direction: column; border: none; overflow: visible; gap: 0.75rem; }
+  .newsletter-form input { border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.1); width: 100%; }
+  .newsletter-form button { border-radius: var(--radius-md); padding: 0.85rem; width: 100%; font-size: 1rem; }
 
   /* Methodology */
   .methodology-box { flex-direction: column; padding: 1.5rem; gap: 1.5rem; }
