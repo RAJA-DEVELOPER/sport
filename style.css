@@ -149,14 +149,14 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-links .btn { color: var(--text-light); border-bottom: none; padding-bottom: 0.85rem; }
 .nav-links .btn::after { background: rgba(255,255,255,0.1); }
 .nav-links .btn:hover { border-bottom: none; }
-.mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
-.hamburger { display: block; width: 24px; height: 2px; background-color: var(--text-light); position: relative; transition: var(--transition); }
-.hamburger::before, .hamburger::after { content: ''; position: absolute; width: 100%; height: 100%; background-color: var(--text-light); transition: var(--transition); left: 0; }
+.mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; color: var(--primary); }
+.hamburger { display: block; width: 24px; height: 2px; background-color: var(--primary); position: relative; transition: var(--transition); }
+.hamburger::before, .hamburger::after { content: ''; position: absolute; width: 100%; height: 100%; background-color: var(--primary); transition: var(--transition); left: 0; }
 .hamburger::before { top: -8px; }
 .hamburger::after { bottom: -8px; }
 .nav-open .hamburger { background-color: transparent; }
-.nav-open .hamburger::before { top: 0; transform: rotate(45deg); }
-.nav-open .hamburger::after { bottom: 0; transform: rotate(-45deg); }
+.nav-open .hamburger::before { top: 0; transform: rotate(45deg); background-color: #fff; }
+.nav-open .hamburger::after { bottom: 0; transform: rotate(-45deg); background-color: #fff; }
 
 /* Hero Section */
 .hero { position: relative; min-height: 100vh; display: flex; background-color: var(--primary); color: var(--text-light); padding: 10rem 0 8rem; overflow: hidden; }
