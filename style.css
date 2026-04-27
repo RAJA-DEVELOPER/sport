@@ -149,14 +149,14 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-links .btn { color: var(--text-light); border-bottom: none; padding-bottom: 0.85rem; }
 .nav-links .btn::after { background: rgba(255,255,255,0.1); }
 .nav-links .btn:hover { border-bottom: none; }
-.mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; color: var(--primary); }
-.hamburger { display: block; width: 24px; height: 2.5px; background-color: var(--primary); position: relative; transition: var(--transition); }
-.hamburger::before, .hamburger::after { content: ''; position: absolute; width: 100%; height: 100%; background-color: var(--primary); transition: var(--transition); left: 0; }
-.hamburger::before { top: -8px; }
-.hamburger::after { bottom: -8px; }
+.mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; color: var(--cta); z-index: 1001; }
+.hamburger { display: block; width: 28px; height: 3px; background-color: var(--cta); position: relative; transition: var(--transition); }
+.hamburger::before, .hamburger::after { content: ''; position: absolute; width: 100%; height: 100%; background-color: var(--cta); transition: var(--transition); left: 0; }
+.hamburger::before { top: -9px; }
+.hamburger::after { bottom: -9px; }
 .nav-open .hamburger { background-color: transparent; }
-.nav-open .hamburger::before { top: 0; transform: rotate(45deg); background-color: #fff; }
-.nav-open .hamburger::after { bottom: 0; transform: rotate(-45deg); background-color: #fff; }
+.nav-open .hamburger::before { top: 0; transform: rotate(45deg); background-color: var(--cta); height: 3.5px; }
+.nav-open .hamburger::after { bottom: 0; transform: rotate(-45deg); background-color: var(--cta); height: 3.5px; }
 
 /* Hero Section */
 .hero { position: relative; min-height: 100vh; display: flex; background-color: var(--primary); color: var(--text-light); padding: 10rem 0 8rem; overflow: hidden; }
@@ -417,8 +417,8 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 /* Lightbox */
 .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 18, 32, 0.92); backdrop-filter: blur(15px); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
 .lightbox.active { opacity: 1; pointer-events: all; }
-.lightbox-close { position: absolute; top: 2rem; right: 2rem; color: var(--text-light); font-size: 2.5rem; cursor: pointer; transition: var(--transition-bounce); z-index: 10; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); border-radius: 50%; }
-.lightbox-close:hover { color: var(--cta); transform: rotate(90deg) scale(1.1); background: rgba(255,255,255,0.15); }
+.lightbox-close { position: absolute; top: 2rem; right: 2rem; color: var(--cta); font-size: 2.5rem; cursor: pointer; transition: var(--transition-bounce); z-index: 10; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); border-radius: 50%; border: 2px solid var(--cta); }
+.lightbox-close:hover { color: #fff; transform: rotate(90deg) scale(1.1); background: var(--cta); }
 
 /* Contact Section */
 .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; background: var(--bg-card); border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--border); }
@@ -871,7 +871,7 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 }
 
 /* â”€â”€ Tablet Portrait / Large Mobile â”€â”€ */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   /* Global */
   .container { width: 94%; padding: 0 0.5rem; }
   .section-padding { padding: 4rem 0; }
