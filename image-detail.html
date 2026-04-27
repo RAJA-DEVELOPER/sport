@@ -49,7 +49,7 @@
         }
         .detail-badge {
             display: inline-block;
-            background: rgba(0, 201, 177, 0.15);
+            background: rgba(15, 82, 186, 0.15);
             color: var(--accent);
             padding: 0.4rem 1rem;
             border-radius: 2rem;
@@ -58,7 +58,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 1.5rem;
-            border: 1px solid rgba(0, 201, 177, 0.3);
+            border: 1px solid rgba(15, 82, 186, 0.3);
         }
         .detail-title {
             font-size: 2.5rem;
@@ -103,6 +103,10 @@
             .detail-badge { font-size: 0.78rem; padding: 0.3rem 0.8rem; }
         }
     </style>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
 
@@ -139,7 +143,7 @@
         <div class="container">
             <div class="detail-container reveal">
                 <div class="detail-img-wrapper">
-                    <img id="detail-img" src="" alt="Gallery Image">
+                    <img loading="lazy" id="detail-img" src="" alt="Gallery Image">
                 </div>
                 <div class="detail-content">
                     <span class="detail-badge" id="detail-category">Category</span>
@@ -197,7 +201,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);

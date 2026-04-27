@@ -8,6 +8,10 @@
     <meta name="description" content="Discover our world-class training programs in Cricket, Football, Badminton, Tennis, and Fitness.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
 
@@ -50,7 +54,7 @@
             <!-- Cricket Detailed Card -->
             <div class="program-detail-card reveal">
                 <div class="pd-image">
-                    <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80" alt="Cricket Match">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80" alt="Cricket Match">
                 </div>
                 <div class="pd-content">
                     <span class="pd-badge">Cricket Academy</span>
@@ -96,7 +100,7 @@
             <!-- Football Detailed Card -->
             <div class="program-detail-card reveal">
                 <div class="pd-image">
-                    <img src="https://images.unsplash.com/photo-1552667466-07770ae110d0?auto=format&fit=crop&w=800&q=80" alt="Football">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1552667466-07770ae110d0?auto=format&fit=crop&w=800&q=80" alt="Football">
                 </div>
                 <div class="pd-content">
                     <span class="pd-badge" style="color:#dc2626; background:rgba(220,38,38,0.1);">Football Squad</span>
@@ -142,7 +146,7 @@
             <!-- Tennis Detailed Card -->
             <div class="program-detail-card reveal">
                 <div class="pd-image">
-                    <img src="https://images.unsplash.com/photo-1589801258579-18e091f4ca26?auto=format&fit=crop&w=800&q=80" alt="Tennis">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1589801258579-18e091f4ca26?auto=format&fit=crop&w=800&q=80" alt="Tennis">
                 </div>
                 <div class="pd-content">
                     <span class="pd-badge" style="color:#16a34a; background:rgba(22,163,74,0.1);">Tennis Elite</span>
@@ -188,7 +192,7 @@
             <!-- Full List button -->
             <div class="text-center" style="margin-top: 2rem;">
                 <p style="color: var(--text-muted); margin-bottom: 1rem;">Also offering: Badminton Pro, Basketball Youth League, & Pro Fitness Training.</p>
-                <a href="schedule.html" class="btn btn-outline" style="color: var(--primary); border-color: var(--primary);">View Batch Schedules <i class="fa-solid fa-calendar" style="margin-left: 5px;"></i></a>
+                <a href="schedule.html" class="btn btn-outline">View Batch Schedules <i class="fa-solid fa-calendar" style="margin-left: 5px;"></i></a>
             </div>
 
         </div>
@@ -204,20 +208,20 @@
             
             <div class="skill-guide reveal">
                 <div class="guide-step">
-                    <div class="step-number">1</div>
-                    <span class="badge" style="background:rgba(37,99,235,0.1); color:var(--secondary);">Foundation Phase</span>
+                    <div class="step-number" style="background:var(--accent);">1</div>
+                    <span class="badge" style="background:rgba(100,116,139,0.1); color:var(--accent);">Foundation Phase</span>
                     <h3>Beginners</h3>
                     <p style="color:var(--text-muted);">Focus is purely on motor skills, hand-eye coordination, rules of the game, and having fun. No pressure to play competitive matches.</p>
                 </div>
-                <div class="guide-step" style="border-color: var(--secondary);">
-                    <div class="step-number" style="background:var(--secondary);">2</div>
-                    <span class="badge" style="background:rgba(249,115,22,0.1); color:var(--cta);">Development Phase</span>
+                <div class="guide-step">
+                    <div class="step-number" style="background:var(--cta);">2</div>
+                    <span class="badge" style="background:rgba(234,179,8,0.1); color:var(--cta);">Development Phase</span>
                     <h3>Intermediates</h3>
                     <p style="color:var(--text-muted);">Transitioning from fun games into serious technical drills. Players start taking part in internal friendlies and learn tactical set-pieces.</p>
                 </div>
-                <div class="guide-step" style="border-color: var(--primary);">
+                <div class="guide-step">
                     <div class="step-number" style="background:var(--primary);">3</div>
-                    <span class="badge" style="background:rgba(11,18,32,0.1); color:var(--primary);">Performance Phase</span>
+                    <span class="badge" style="background:rgba(10,31,68,0.1); color:var(--primary);">Performance Phase</span>
                     <h3>Advanced / Pro</h3>
                     <p style="color:var(--text-muted);">High-intensity, physically demanding training. Strict diets, video form analysis, and weekly competitive state/district tournament entries.</p>
                 </div>
@@ -452,6 +456,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
